@@ -1,5 +1,5 @@
 require "formula"
-require_relative "lib/custom_download_strategy"
+require_relative "../lib/custom_download_strategy"
 
 class KinetikCli < Formula
   desc "Kinetik"
