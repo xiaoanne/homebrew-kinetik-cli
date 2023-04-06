@@ -18,10 +18,10 @@ class KinetikCli < Formula
   bottle do
     root_url "https://ghcr.io/v2/section6nz/kinetik-base"
   end
-  
+
   def install
     if Hardware::CPU.arm?
-      bin.install "kinetik-main-aarch64-apple-darwi" => "kinetik"
+      bin.install "kinetik-main-aarch64-apple-darwin" => "kinetik"
     else
       bin.install "kinetik-main-x86_64-apple-darwin" => "kinetik"
     end
