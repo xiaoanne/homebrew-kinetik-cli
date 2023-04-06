@@ -5,13 +5,13 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   require "utils/github"
 
   def initialize(url, name, version, **meta)
-      super
+    super
       parse_url_pattern
       set_github_token
   end
 
   def parse_url_pattern
-    unless match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
+    unless match == url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Repository."
     end
 
@@ -29,7 +29,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def set_github_token
-    @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    @github_token = ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", nil)
     unless @github_token
       raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
     end
@@ -62,7 +62,7 @@ class GithubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def parse_url_pattern
     url_pattern = %r{https://github.com/([^/]+)/([^/]+)/releases/download/([^/]+)/(\S+)}
-    unless @url =~ url_pattern
+    unless @url match? url_pattern
       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
     end
 
@@ -78,7 +78,8 @@ class GithubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
-    curl_download download_url, "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", to: temporary_path
+    curl_download download_url, "--header", "Accept: application/octet-stream",
+    "--header", "Authorization: token #{@github_token}", to: temporary_path
   end
 
   def asset_id
