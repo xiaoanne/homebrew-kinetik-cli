@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require "download_strategy"
 
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
@@ -6,8 +8,8 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
 
   def initialize(url, name, version, **meta)
     super
-      parse_url_pattern
-      set_github_token
+    parse_url_pattern
+    set_github_token
   end
 
   def parse_url_pattern
@@ -55,14 +57,20 @@ end
 # Release assets. To use it, add `:using => :github_private_release` to the URL section
 # of your formula. This download strategy uses GitHub access tokens (in the
 # environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
-class GithubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
+class GithubPrivateRepositoryReleaseDownloadStrategy1 < GitHubPrivateRepositoryDownloadStrategy
   def initialize(url, name, version, **meta)
     super
   end
 
   def parse_url_pattern
     url_pattern = %r{https://github.com/([^/]+)/([^/]+)/releases/download/([^/]+)/(\S+)}
-    raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release." unless @url =~ url_pattern
+
+#     @url =~ url_pattern || raise(CurlDownloadStrategyError, "Invalid url pattern for GitHub Release.")
+
+    unless @url =~ url_pattern
+      raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
+    end
+
     _, @owner, @repo, @tag, @filename = *@url.match(url_pattern)
   end
 
