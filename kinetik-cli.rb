@@ -17,10 +17,10 @@ class KinetikCli < Formula
     root_url "https://ghcr.io/v2/section6nz/kinetik-base"
   end
 
-  strategy = GitHubPrivateRepositoryDownloadStrategy.new(
-  "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin",
-  "kinetik-cli",
-  "0.13.5")
+  # strategy = GitHubPrivateRepositoryDownloadStrategy.new(
+  # "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin",
+  # "kinetik-cli",
+  # "0.13.5")
 
   def install
     if Hardware::CPU.arm?
