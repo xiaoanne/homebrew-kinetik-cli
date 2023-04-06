@@ -1,0 +1,6 @@
+[34m==>[0m [1mbrew linkage --cached kinetik-cli[0m
+System libraries:
+  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  /System/Library/Frameworks/Security.framework/Versions/A/Security
+  /usr/lib/libSystem.B.dylib
+  /usr/lib/libiconv.2.dylib
