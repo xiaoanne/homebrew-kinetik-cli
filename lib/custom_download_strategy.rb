@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "download_strategy"
 
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
@@ -5,9 +6,9 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     require "utils/github"
   
     def initialize(url, name, version, **meta)
-      super
-      parse_url_pattern
-      set_github_token
+        super
+        parse_url_pattern
+        set_github_token
     end
   
     def parse_url_pattern

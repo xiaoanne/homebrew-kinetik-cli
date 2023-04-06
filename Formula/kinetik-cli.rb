@@ -11,7 +11,7 @@ class KinetikCli < Formula
     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", using: GitHubPrivateRepositoryReleaseDownloadStrategy
     sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
   else
-    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin", :using: GitHubPrivateRepositoryReleaseDownloadStrategy
+    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin", using: GitHubPrivateRepositoryReleaseDownloadStrategy
     sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
   end
 
