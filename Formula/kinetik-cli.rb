@@ -9,7 +9,7 @@ class KinetikCli < Formula
   head "https://github.com/section6nz/kinetik-base.git", branch: "main"
   if Hardware::CPU.arm?
     # url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.7/kinetik--0.13.5.arm64_monterey.bottle.tar.gz"
-    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GitHubPrivateRepositoryDownloadStrategy
+    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
     sha256 "ef901473181d1f5c638bf613b54b09ea69e65a6bbaccd2c25e30de25f669e40f"
   else
     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin"
