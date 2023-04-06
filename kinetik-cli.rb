@@ -21,7 +21,6 @@ class KinetikCli < Formula
   "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin",
   "kinetik-cli",
   "0.13.5")
-  strategy.fetch
 
   def install
     if Hardware::CPU.arm?
