@@ -83,8 +83,7 @@ class GithubPrivateRepositoryReleaseDownloadStrategy1 < GitHubPrivateRepositoryD
   def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
-    curl_download download_url, "--header", "Accept: application/octet-stream",
-    "--header", "Authorization: token #{@github_token}", to: temporary_path
+    curl_download download_url, "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", to: temporary_path
   end
 
   def asset_id
