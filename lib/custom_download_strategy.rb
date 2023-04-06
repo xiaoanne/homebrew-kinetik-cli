@@ -55,7 +55,7 @@ end
 # Release assets. To use it, add `:using => :github_private_release` to the URL section
 # of your formula. This download strategy uses GitHub access tokens (in the
 # environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
-class GithubPrivateRepositoryReleaseDownloadStrategy3 < GitHubPrivateRepositoryDownloadStrategy
+class GithubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
   def parse_url_pattern
     url_pattern = %r{https://github.com/([^/]+)/([^/]+)/releases/download/([^/]+)/(\S+)}
 
@@ -73,8 +73,7 @@ class GithubPrivateRepositoryReleaseDownloadStrategy3 < GitHubPrivateRepositoryD
   def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
-    args = ["--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}"]
-    curl_download(@url, *args, to: temporary_path)
+    curl_download download_url, "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", to: temporary_path
   end
 
   def asset_id
