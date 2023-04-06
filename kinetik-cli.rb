@@ -7,7 +7,7 @@ class KinetikCli < Formula
   head "https://github.com/xiaoanne/homebrew-d3", branch: "main"
   if Hardware::CPU.arm?
     # url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.7/kinetik--0.13.5.arm64_monterey.bottle.tar.gz"
-    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => :github_private_repo
+    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GitHubPrivateRepositoryDownloadStrategy
     sha256 "ef901473181d1f5c638bf613b54b09ea69e65a6bbaccd2c25e30de25f669e40f"
   else
     url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.6/kinetik--0.13.5.x86_64_monterey.bottle.tar.gz"
@@ -17,9 +17,13 @@ class KinetikCli < Formula
     root_url "https://ghcr.io/v2/xiaoanne/homebrew-d3"
   end
 
+  strategy = GitHubPrivateRepositoryDownloadStrategy.new(
+  "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin",
+  "kinetik-cli",
+  "0.13.5")
+  strategy.fetch
+
   def install
-    strategy = GitHubPrivateRepositoryDownloadStrategy.new(url, name, version)
-    strategy.fetch
     if Hardware::CPU.arm?
       bin.install "0.13.5/bin/kinetik" => "kinetik"
     else
