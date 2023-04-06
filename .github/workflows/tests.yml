@@ -33,7 +33,7 @@ jobs:
 
 #      - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli
+      - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli Formula/kinetik-cli.rb
 #        if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
