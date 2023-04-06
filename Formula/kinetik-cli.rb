@@ -10,20 +10,15 @@ class KinetikCli < Formula
   if Hardware::CPU.arm?
     # url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.7/kinetik--0.13.5.arm64_monterey.bottle.tar.gz"
     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "ef901473181d1f5c638bf613b54b09ea69e65a6bbaccd2c25e30de25f669e40f"
+    sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
   else
-    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin"
+    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
     sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
   end
   bottle do
     root_url "https://ghcr.io/v2/section6nz/kinetik-base"
   end
-
-  # strategy = GitHubPrivateRepositoryDownloadStrategy.new(
-  # "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin",
-  # "kinetik-cli",
-  # "0.13.5")
-
+  
   def install
     if Hardware::CPU.arm?
       bin.install "kinetik-main-aarch64-apple-darwi" => "kinetik"
