@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 require "download_strategy"
 
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
@@ -57,7 +55,7 @@ end
 # Release assets. To use it, add `:using => :github_private_release` to the URL section
 # of your formula. This download strategy uses GitHub access tokens (in the
 # environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
-class GithubPrivateRepositoryReleaseDownloadStrategy1 < GitHubPrivateRepositoryDownloadStrategy
+class GithubPrivateRepositoryReleaseDownloadStrategy2 < GitHubPrivateRepositoryDownloadStrategy
   def initialize(url, name, version, **meta)
     super
   end
@@ -65,14 +63,7 @@ class GithubPrivateRepositoryReleaseDownloadStrategy1 < GitHubPrivateRepositoryD
   def parse_url_pattern
     url_pattern = %r{https://github.com/([^/]+)/([^/]+)/releases/download/([^/]+)/(\S+)}
 
-#     @url =~ url_pattern || raise(CurlDownloadStrategyError, "Invalid url pattern for GitHub Release.")
-
-#     unless @url =~ url_pattern
-#       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
-#     end
-    unless @url.match?(url_pattern)
-      raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
-    end
+    @url.match?(url_pattern) || raise(CurlDownloadStrategyError, "Invalid url pattern for GitHub Release.")
 
     _, @owner, @repo, @tag, @filename = *@url.match(url_pattern)
   end
@@ -86,7 +77,13 @@ class GithubPrivateRepositoryReleaseDownloadStrategy1 < GitHubPrivateRepositoryD
   def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
-    curl_download download_url, "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", to: temporary_path
+    curl_download download_url,
+              "--header",
+              "Accept: application/octet-stream",
+              "--header",
+              "Authorization: token #{@github_token}",
+              to: temporary_path
+    # curl_download download_url, "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", to: temporary_path
   end
 
   def asset_id
