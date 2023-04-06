@@ -18,6 +18,8 @@ class KinetikCli < Formula
   end
 
   def install
+    strategy = GitHubPrivateRepositoryDownloadStrategy.new(url, name, version)
+    strategy.fetch
     if Hardware::CPU.arm?
       bin.install "0.13.5/bin/kinetik" => "kinetik"
     else
