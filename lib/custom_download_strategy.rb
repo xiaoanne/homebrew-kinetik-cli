@@ -67,7 +67,10 @@ class GithubPrivateRepositoryReleaseDownloadStrategy1 < GitHubPrivateRepositoryD
 
 #     @url =~ url_pattern || raise(CurlDownloadStrategyError, "Invalid url pattern for GitHub Release.")
 
-    unless @url =~ url_pattern
+#     unless @url =~ url_pattern
+#       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
+#     end
+    unless @url.match?(url_pattern)
       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
     end
 
