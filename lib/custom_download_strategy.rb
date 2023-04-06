@@ -1,27 +1,25 @@
 # frozen_string_literal: true
-require "download_strategy"
+require "utils/github"
+require "utils/formatter"
 
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
-    require "utils/formatter"
-    require "utils/github"
+  def initialize(url, name, version, **meta)
+      super
+      parse_url_pattern
+      set_github_token
+  end
   
-    def initialize(url, name, version, **meta)
-        super
-        parse_url_pattern
-        set_github_token
-    end
-  
-    def parse_url_pattern
-      unless match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
-        raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Repository."
-      end
-  
-      _, @owner, @repo, @filepath = *match
-    end
-  
-    def download_url
-      "https://#{@github_token}@github.com/#{@owner}/#{@repo}/#{@filepath}"
-    end
+  def parse_url_pattern
+    unless match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
+    raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Repository."
+  end
+
+  _, @owner, @repo, @filepath = *match
+  end
+
+  def download_url
+    "https://#{@github_token}@github.com/#{@owner}/#{@repo}/#{@filepath}"
+  end
   
     private
   
