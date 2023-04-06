@@ -1,10 +1,12 @@
+require "formula"
 require_relative "lib/custom_download_strategy"
+
 class KinetikCli < Formula
   desc "Kinetik"
   homepage "https://github.com/xiaoanne/homebrew-d3"
   version "0.13.5"
   license "section6nz"
-  head "https://github.com/section6nz/kinetik-base", branch: "main"
+  head "https://github.com/section6nz/kinetik-base.git", branch: "main"
   if Hardware::CPU.arm?
     # url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.7/kinetik--0.13.5.arm64_monterey.bottle.tar.gz"
     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GitHubPrivateRepositoryDownloadStrategy
