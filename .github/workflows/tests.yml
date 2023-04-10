@@ -22,7 +22,6 @@ jobs:
           kinetik
           brew bottle Formula/kinetik-cli.rb
           ls -R
-#          ls kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
       - name: Upload bottles as artifact
 #        if: always() && github.event_name == 'pull_request'
