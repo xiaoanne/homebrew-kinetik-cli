@@ -12,15 +12,15 @@
       "homepage": "https://github.com/section6nz/homebrew-kinetik-base"
     },
     "bottle": {
-      "root_url": "https://ghcr.io/v2/xiaoanne/kinetik-cli",
+      "root_url": "https://ghcr.io/v2/homebrew/core",
       "cellar": "any_skip_relocation",
       "rebuild": 1,
-      "date": "2023-04-07",
+      "date": "2023-04-11",
       "tags": {
         "monterey": {
           "filename": "kinetik-cli-0.13.5.monterey.bottle.1.tar.gz",
           "local_filename": "kinetik-cli--0.13.5.monterey.bottle.1.tar.gz",
-          "sha256": "a5e9e7c2fc29283f8511aeafe49762b53ff3dc0016090a8bc32a7b71a795cab5",
+          "sha256": "7025a6105cf2e003e7daaa5aa3fb1225431bb068947bbb6d4fc6688bd75d4dba",
           "tab": {
             "homebrew_version": "4.0.11",
             "changed_files": [
