@@ -36,6 +36,11 @@ jobs:
 #      - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli Formula/kinetik-cli.rb
 #        if: github.event_name == 'pull_request'
 
+      - name: List workspace files
+        run: |
+          ls -R
+          ls kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
+
       - name: Upload bottles as artifact
 #        if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@main
