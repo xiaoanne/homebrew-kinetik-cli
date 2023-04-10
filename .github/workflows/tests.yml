@@ -10,12 +10,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-#      - name: Set up Homebrew
-#        id: set-up-homebrew
-#        uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@master
 
-      - name: List workspace files
+      - name: Create bottle file
         run: |
+          brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli Formula/kinetik-cli.rb
           ls -R
           ls kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
