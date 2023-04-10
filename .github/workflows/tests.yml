@@ -14,8 +14,9 @@ jobs:
       - uses: Homebrew/actions/setup-homebrew@master
 
       - name: Create bottle file
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          export HOMEBREW_GITHUB_API_TOKEN=${{ GITHUB.PAT }}
           brew install Formula/kinetik-cli.rb
           kinetik
           ls -R
