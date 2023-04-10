@@ -1,2 +1,0 @@
-Error: 1 failed step!
-brew audit kinetik-cli --online --git --skip-style
