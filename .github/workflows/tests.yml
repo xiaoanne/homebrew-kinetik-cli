@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: bottles
-          path: '*.bottle.*'
+          path: kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
