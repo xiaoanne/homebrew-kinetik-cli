@@ -1,11 +1,12 @@
 name: brew pr-pull
 on:
+#  pull_request:
   pull_request_target:
     types:
       - labeled
 jobs:
   pr-pull:
-    if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
+#    if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
     runs-on: ubuntu-22.04
     steps:
       - name: Set up Homebrew
@@ -28,8 +29,8 @@ jobs:
           token: ${{ github.token }}
           branch: main
 
-      - name: Delete branch
-        if: github.event.pull_request.head.repo.fork == false
-        env:
-          BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: git push --delete origin $BRANCH
+#      - name: Delete branch
+#        if: github.event.pull_request.head.repo.fork == false
+#        env:
+#          BRANCH: ${{ github.event.pull_request.head.ref }}
+#        run: git push --delete origin $BRANCH
