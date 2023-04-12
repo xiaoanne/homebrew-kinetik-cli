@@ -2,10 +2,10 @@ require_relative "../lib/custom_download_strategy"
 
 class KinetikCli < Formula
   desc "This is the brew formula to install Kinetik CLI"
-  homepage "https://github.com/section6nz/homebrew-kinetik-base"
+  homepage "https://github.com/xiaoanne/homebrew-kinetik-cli"
   version "0.13.5"
   license "Apache-2.0"
-  head "https://github.com/section6nz/homebrew-kinetik-base", branch: "main"
+  head "https://github.com/xiaoanne/homebrew-kinetik-cli", branch: "main"
 
   on_macos do
       if Hardware::CPU.arm?
