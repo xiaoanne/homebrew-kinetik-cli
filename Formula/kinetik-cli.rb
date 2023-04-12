@@ -10,7 +10,7 @@ class KinetikCli < Formula
   on_macos do
       if Hardware::CPU.arm?
         url "https://github.com/xiaoanne/homebrew-kinetik-cli/blob/main/bin/kinetik-main-aarch64-apple-darwin"
-        sha256 "888c13d7f869c052883a3a27d3623e0151acec7d8f28c3b1fb1db970395acf5b"
+        sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
       else
         url "https://github.com/xiaoanne/homebrew-kinetik-cli/blob/main/bin/kinetik-main-x86_64-apple-darwin"
         sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
