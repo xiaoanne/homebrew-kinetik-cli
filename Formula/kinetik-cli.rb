@@ -29,7 +29,7 @@ class KinetikCli < Formula
 
   on_linux do
     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-unknown-linux-gnu", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
+    sha256 "4f49bb353d920a01fd4fc3e2689c70f900848c35afb85bc72e2fb683bcb09ffd"
     def install
         bin.install "kinetik-main-x86_64-unknown-linux-gnu" => "kinetik"
         chmod 0755, "#{bin}/kinetik"
