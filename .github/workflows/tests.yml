@@ -11,6 +11,11 @@ jobs:
         os: [ubuntu-22.04, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: run
+        run: |
+          ls -R
+          pwd
+
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
