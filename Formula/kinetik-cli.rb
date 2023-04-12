@@ -33,7 +33,6 @@ class KinetikCli < Formula
     def install
         bin.install "kinetik-main-x86_64-unknown-linux-gnu" => "kinetik"
         chmod 0755, "#{bin}/kinetik"
-        system "xattr", "-dr", "com.apple.quarantine", "#{bin}/kinetik"
     end
   end
 
