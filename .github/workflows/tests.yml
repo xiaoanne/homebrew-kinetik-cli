@@ -12,12 +12,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: kinetik-binary
-          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bin/
-
       - name: run
         run: |
           ls -R
@@ -25,11 +19,11 @@ jobs:
           brew install /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/Formula/kinetik-cli.rb
           kinetik
 
-#      - name: Upload artifact
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: kinetik binaries
-#          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bin/
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: kinetik binaries
+          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bin/
 
       - name: Set up Homebrew
         id: set-up-homebrew
