@@ -15,10 +15,6 @@ class KinetikCli < Formula
         url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
         sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
       end
-    #
-    #   bottle do
-    #     root_url "https://ghcr.io/v2/section6nz/kinetik-base"
-    #   end
 
       def install
         if Hardware::CPU.arm?
@@ -40,7 +36,6 @@ class KinetikCli < Formula
         system "xattr", "-dr", "com.apple.quarantine", "#{bin}/kinetik"
     end
   end
-
 
   test do
     system "#{bin}/kinetik", "--version"
