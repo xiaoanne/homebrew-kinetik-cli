@@ -2,17 +2,17 @@ require_relative "../lib/custom_download_strategy"
 
 class KinetikCli < Formula
   desc "This is the brew formula to install Kinetik CLI"
-  homepage "https://github.com/xiaoanne/homebrew-kinetik-cli"
+  homepage "https://github.com/section6nz/homebrew-kinetik-base"
   version "0.13.5"
   license "Apache-2.0"
-  head "https://github.com/xiaoanne/homebrew-kinetik-cli", branch: "main"
+  head "https://github.com/section6nz/homebrew-kinetik-base", branch: "main"
 
   on_macos do
       if Hardware::CPU.arm?
-        url "https://github.com/xiaoanne/homebrew-kinetik-cli/blob/main/bin/kinetik-main-aarch64-apple-darwin"
+        url "https://github.com/section6nz/kinetik-base/releases/download/v#{version}/kinetik-main-aarch64-apple-darwin", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
         sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
       else
-        url "https://github.com/xiaoanne/homebrew-kinetik-cli/blob/main/bin/kinetik-main-x86_64-apple-darwin"
+        url "https://github.com/section6nz/kinetik-base/releases/download/v#{version}/kinetik-main-x86_64-apple-darwin", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
         sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
       end
 
@@ -28,16 +28,12 @@ class KinetikCli < Formula
   end
 
   on_linux do
-    url "https://github.com/xiaoanne/homebrew-kinetik-cli/blob/main/bin/kinetik-main-x86_64-unknown-linux-gnu", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    url "https://github.com/section6nz/kinetik-base/releases/download/v#{version}/kinetik-main-x86_64-unknown-linux-gnu", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
     sha256 "4f49bb353d920a01fd4fc3e2689c70f900848c35afb85bc72e2fb683bcb09ffd"
     def install
         bin.install "kinetik-main-x86_64-unknown-linux-gnu" => "kinetik"
         chmod 0755, "#{bin}/kinetik"
     end
-  end
-
-  bottle do
-    root_url "https://ghcr.io/v2/xiaoanne/kinetik-cli"
   end
 
   test do

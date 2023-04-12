@@ -13,10 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: run
+        ENV:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
         run: |
           ls -R
           pwd
-          brew install /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/Formula/kinetik-cli.rb
+          brew tap xiaoanne/kinetik-cli
+          brew install kinetik-cli
           kinetik
 
       - name: Upload artifact
