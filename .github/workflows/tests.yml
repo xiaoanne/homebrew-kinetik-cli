@@ -11,6 +11,12 @@ jobs:
         os: [ubuntu-22.04, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: kinetik binaries
+          path: bin/
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
