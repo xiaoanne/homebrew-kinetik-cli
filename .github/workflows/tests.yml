@@ -16,13 +16,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: kinetik-binary
-          path: $pwd/bin/
+          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bin/
 
       - name: run
         run: |
           ls -R
           pwd
-          brew install $pwd/Formula/kinetik-cli.rb
+          brew install /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/Formula/kinetik-cli.rb
           kinetik
 
 #      - name: Upload artifact
