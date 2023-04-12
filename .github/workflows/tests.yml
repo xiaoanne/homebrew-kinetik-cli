@@ -16,6 +16,8 @@ jobs:
         run: |
           ls -R
           pwd
+          brew install /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/Formula/kinetik-cli.rb
+          kinetik
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
