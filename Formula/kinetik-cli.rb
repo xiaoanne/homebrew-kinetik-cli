@@ -45,7 +45,6 @@ class KinetikCli < Formula
     root_url "https://ghcr.io/v2/xiaoanne/kinetik-cli"
   end
 
-
   test do
     system "#{bin}/kinetik", "--version"
   end
