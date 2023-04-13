@@ -27,7 +27,7 @@ jobs:
           cd bottle
           brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/d3/kinetik-cli xiaoanne/d3/kinetik-cli
           ls -R
-          cd ..
+          cd .. 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
