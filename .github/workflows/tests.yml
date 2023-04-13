@@ -47,4 +47,4 @@ jobs:
         run: |
           ls -R
           cd bottle
-          brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
+          brew pr-upload --verbose --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
