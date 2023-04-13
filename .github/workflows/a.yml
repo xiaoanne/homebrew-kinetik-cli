@@ -1,7 +1,6 @@
 name: Publish Bottles
 concurrency:
   group: ${{ github.ref }}
-  max: 2
 
 on:
   push:

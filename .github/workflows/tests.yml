@@ -1,7 +1,7 @@
 name: brew test-bot
 concurrency:
   group: ${{ github.ref }}
-  max: 2
+  cancel-in-progress: true
 
 on:
   push:
