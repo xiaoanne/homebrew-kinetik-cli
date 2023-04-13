@@ -18,9 +18,9 @@ jobs:
         run: |
           ls -R
           pwd
-          brew install ./Formula/kinetik-cli.rb
-          brew install --build-bottle ./Formula/kinetik-cli.rb
-          brew bottle ./Formula/kinetik-cli.rb
+          brew tap xiaoanne/kinetik-cli
+          brew install --build-bottle kinetik-cli
+          brew bottle kinetik-cli
           ls -R
 
       - name: Set up Homebrew
