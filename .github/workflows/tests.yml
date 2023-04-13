@@ -18,7 +18,6 @@ jobs:
         run: |
           ls -R
           pwd
-#          brew tap xiaoanne/kinetik-cli
           brew install --build-bottle ./Formula/kinetik-cli.rb
           brew bottle ./Formula/kinetik-cli.rb
           ls -R
