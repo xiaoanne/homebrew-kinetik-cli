@@ -20,7 +20,6 @@ jobs:
           pwd
           brew tap xiaoanne/kinetik-cli
           brew install kinetik-cli
-          kinetik
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
