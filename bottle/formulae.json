@@ -1,0 +1,15 @@
+{
+  "name": "example-formula",
+  "versions": {
+    "1.0.0": {
+      "url": "file:///path/to/bottle/file.tar.gz",
+      "sha256": "cc3230053427fbe4e25dfdaa40148fcdfc87968bdfde782a9e918dba8d461280"
+    }
+  },
+  "description": "KinetikCli",
+  "homepage": "https://github.com/xiaoanne/kinetik-cli",
+  "license": "Anen",
+  "maintainer": {
+    "github": "xiaoanne"
+  }
+}

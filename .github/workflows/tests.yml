@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bottle-tarball
-          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
+          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
 
       - name: Download Artifact
         uses: actions/download-artifact@v2
@@ -46,7 +46,6 @@ jobs:
       - run: |
           cd bottle
           tar -zxvf kinetik-cli--0.13.5.monterey.bottle.1.tar.gz -C .
-          cp kinetik-cli/0.13.5/INSTALL_RECEIPT.json .
           ls -R
 
       - name: Publish Bottle
@@ -54,7 +53,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
-#          GIT_EDITOR: vi
         run: |
           ls -R
           cd bottle
