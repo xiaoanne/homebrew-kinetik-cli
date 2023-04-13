@@ -15,7 +15,7 @@ jobs:
       - name: setup git/install kinetik/create bottle
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
-          GIT_EDITOR: vi
+#          GIT_EDITOR: vi
         run: |
           git config --global user.email "engineering@section6.nz"
           git config --global user.name "Anne Wang"
