@@ -45,4 +45,5 @@ jobs:
         run: |
           ls -R
           cd bottle
+          ls /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/xiaoanne/lib/
           brew pr-upload --verbose --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
