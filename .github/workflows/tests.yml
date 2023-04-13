@@ -50,5 +50,6 @@ jobs:
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
 #          GIT_EDITOR: vi
         run: |
+          ls -R
           cd bottle
           brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
