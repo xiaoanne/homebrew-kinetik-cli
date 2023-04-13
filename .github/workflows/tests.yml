@@ -10,10 +10,6 @@ on:
   pull_request:
 jobs:
   anne-try:
-#    strategy:
-#      matrix:
-#        os: [macos-12]
-#    runs-on: ${{ matrix.os }}
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
