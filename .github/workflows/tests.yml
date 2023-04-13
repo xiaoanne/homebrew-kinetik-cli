@@ -24,6 +24,7 @@ jobs:
           pwd
           brew tap xiaoanne/kinetik-cli
           brew install --build-bottle kinetik-cli
+          cd bottle
           brew bottle kinetik-cli
           ls -R
 
