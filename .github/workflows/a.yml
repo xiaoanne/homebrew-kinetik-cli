@@ -1,4 +1,8 @@
 name: Publish Bottles
+concurrency:
+  group: ${{ github.ref }}
+  matrix:
+    max-parallel: [ 2 ]
 
 on:
   push:
