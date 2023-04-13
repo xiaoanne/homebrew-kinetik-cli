@@ -10,7 +10,7 @@ on:
       - feature
   pull_request:
 jobs:
-  test-bot:
+  anne-try:
 #    strategy:
 #      matrix:
 #        os: [macos-12]
