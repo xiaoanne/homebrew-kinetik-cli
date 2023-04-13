@@ -40,7 +40,6 @@ jobs:
       - name: Publish Bottle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_EDITOR: vi
+#          GIT_EDITOR: vi
         run: |
-          hub release create v1.0.0
-          hub release upload v1.0.0 /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
+          brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
