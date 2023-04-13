@@ -1,16 +1,48 @@
 {
-  "name": "kinetik-cli",
-  "tap": "xiaoanne/kinetik-cli",
-  "versions": {
-    "0.13.5": {
-      "url": "file:///Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz",
-      "sha256": "cc3230053427fbe4e25dfdaa40148fcdfc87968bdfde782a9e918dba8d461280"
+  "xiaoanne/kinetik-cli/kinetik-cli": {
+    "formula": {
+      "name": "kinetik-cli",
+      "pkg_version": "0.13.5",
+      "path": "Library/Taps/xiaoanne/homebrew-kinetik-cli/kinetik-cli.rb",
+      "tap_git_path": "kinetik-cli.rb",
+      "tap_git_revision": "d2f0bff1bb7344646101573bd2c0e9bcb95fabbf",
+      "tap_git_remote": "https://github.com/xiaoanne/homebrew-kinetik-cli",
+      "desc": "Kinetik",
+      "license": "section6nz",
+      "homepage": "https://github.com/xiaoanne/homebrew-kinetik-cli"
+    },
+    "bottle": {
+      "root_url": "https://ghcr.io/v2/homebrew/core",
+      "cellar": "any_skip_relocation",
+      "rebuild": 1,
+      "date": "2023-04-06",
+      "tags": {
+        "arm64_monterey": {
+          "filename": "kinetik-cli-0.13.5.arm64_monterey.bottle.1.tar.gz",
+          "local_filename": "kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz",
+          "sha256": "e721e88d88828e26cff6cf9b51df377082f34b1592943b225a6944120fb2b86d",
+          "tab": {
+            "homebrew_version": "4.0.11-70-g61efc70",
+            "changed_files": [
+              "INSTALL_RECEIPT.json"
+            ],
+            "source_modified_time": 1680672014,
+            "compiler": "clang",
+            "runtime_dependencies": [
+
+            ],
+            "arch": "arm64",
+            "built_on": {
+              "os": "Macintosh",
+              "os_version": "macOS 12",
+              "cpu_family": "arm_firestorm_icestorm",
+              "xcode": "14.1",
+              "clt": "13.4.0.0.1.1651278267",
+              "preferred_perl": "5.30"
+            }
+          }
+        }
+      }
     }
-  },
-  "description": "KinetikCli",
-  "homepage": "https://github.com/xiaoanne/kinetik-cli",
-  "license": "anne",
-  "maintainer": {
-    "github": "xiaoanne"
   }
 }
