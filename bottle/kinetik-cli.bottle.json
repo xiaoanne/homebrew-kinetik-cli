@@ -14,7 +14,7 @@
     "bottle": {
       "root_url": "https://ghcr.io/v2/homebrew/core",
       "cellar": "any_skip_relocation",
-      "rebuild": 1,
+      "rebuild": 2,
       "date": "2023-04-06",
       "tags": {
         "arm64_monterey": {
