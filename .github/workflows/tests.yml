@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: kinetik binaries
+          name: bottle tarball
           path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
       - name: Download Artifact
