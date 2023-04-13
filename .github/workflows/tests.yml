@@ -1,8 +1,7 @@
 name: brew test-bot
 concurrency:
   group: ${{ github.ref }}
-  matrix:
-    max-parallel: [ 2 ]
+  max: 2
 
 on:
   push:
