@@ -6,7 +6,6 @@ concurrency:
 on:
   push:
     branches:
-#      - main
       - feature
   pull_request:
 jobs:
@@ -38,6 +37,12 @@ jobs:
           name: kinetik binaries
           path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: bottles
+          path: ./bottle
+
       - name: Publish Bottle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,4 +50,5 @@ jobs:
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
 #          GIT_EDITOR: vi
         run: |
+          cd bottle
           brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
