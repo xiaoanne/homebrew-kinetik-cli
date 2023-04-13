@@ -14,28 +14,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: Homebrew/actions/setup-homebrew@master
-      - name: install kinetik/create bottle
-        env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
-        run: |
-          ls -R
-          pwd
-          brew tap xiaoanne/kinetik-cli
-          brew install --build-bottle kinetik-cli
-          brew bottle kinetik-cli
-          ls -R
+#      - name: install kinetik/create bottle
+#        env:
+#          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
+#        run: |
+#          ls -R
+#          pwd
+#          brew tap xiaoanne/kinetik-cli
+#          brew install --build-bottle kinetik-cli
+#          brew bottle kinetik-cli
+#          ls -R
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: bottle-tarball
-          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
-
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: bottle-tarball
-          path: ./bottle
+#      - name: Upload artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: bottle-tarball
+#          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
+#
+#      - name: Download Artifact
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: bottle-tarball
+#          path: ./bottle
 
       - name: Publish Bottle
         env:
