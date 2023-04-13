@@ -39,11 +39,6 @@ jobs:
           name: bottle-tarball
           path: ./bottle
 
-#      - run: |
-#          cd bottle
-#          tar -zxvf kinetik-cli--0.13.5.monterey.bottle.1.tar.gz -C .
-#          ls -R
-
       - name: Publish Bottle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
