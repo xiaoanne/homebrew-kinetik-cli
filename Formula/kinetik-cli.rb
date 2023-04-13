@@ -1,4 +1,4 @@
-require_relative "../lib/custom_download_strategy"
+require_relative "/Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/lib/custom_download_strategy"
 
 class KinetikCli < Formula
   desc "This is the brew formula to install Kinetik CLI"
