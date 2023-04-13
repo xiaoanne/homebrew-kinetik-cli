@@ -33,8 +33,12 @@ jobs:
           name: bottles
           path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
-      - name: Set up git
-        uses: Homebrew/actions/git-user-config@master
+      - name: Set up Git
+        env:
+          GIT_EDITOR: vi
+        run: |
+          git config --global user.email "engineering@section6.nz"
+          git config --global user.name "Anne Wang"
 
       - name: Publish Bottle
         env:
