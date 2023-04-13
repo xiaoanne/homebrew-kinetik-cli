@@ -18,8 +18,8 @@ jobs:
         run: |
           ls -R
           pwd
-#          brew tap xiaoanne/kinetik-cli
-#          brew install kinetik-cli
+          brew tap xiaoanne/kinetik-cli
+          brew install kinetik-cli
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
