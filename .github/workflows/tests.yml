@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: kinetik binaries
-          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bin/
+          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/*.bottle.*
 
       - name: Set up Homebrew
         id: set-up-homebrew
