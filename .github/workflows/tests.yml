@@ -32,16 +32,6 @@ jobs:
           name: kinetik binaries
           path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Upload bottles as artifact
-        uses: actions/upload-artifact@main
-        with:
-          name: bottles
-          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
-
       - name: Publish Bottle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
