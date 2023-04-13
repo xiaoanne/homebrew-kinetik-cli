@@ -21,9 +21,9 @@ class KinetikCli < Formula
 
     def install
         if Hardware::CPU.arm?
-          bin.install "/#{version}/bin/kinetik" => "kinetik"
+          bin.install "#{version}/bin/kinetik" => "kinetik"
         else
-          bin.install "/#{version}/bin/kinetik" => "kinetik"
+          bin.install "#{version}/bin/kinetik" => "kinetik"
         end
         chmod 0755, "#{bin}/kinetik"
         system "xattr", "-dr", "com.apple.quarantine", "#{bin}/kinetik"
@@ -36,7 +36,7 @@ class KinetikCli < Formula
 #     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-unknown-linux-gnu", :using => GithubPrivateRepositoryReleaseDownload
 #     sha256 "4f49bb353d920a01fd4fc3e2689c70f900848c35afb85bc72e2fb683bcb09ffd"
     def install
-        bin.install "/#{version}/bin/kinetik" => "kinetik"
+        bin.install "#{version}/bin/kinetik" => "kinetik"
         chmod 0755, "#{bin}/kinetik"
     end
   end
