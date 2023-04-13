@@ -22,6 +22,7 @@ jobs:
           brew install --build-bottle kinetik-cli
           brew bottle kinetik-cli
           ls -R
+          ls -ll ${{ pwd }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
