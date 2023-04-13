@@ -34,13 +34,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: bottle tarball
+          name: bottle-tarball
           path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
 
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
-          name: bottles
+          name: bottle-tarball
           path: ./bottle
 
       - name: Publish Bottle
