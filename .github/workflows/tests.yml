@@ -1,4 +1,4 @@
-name: brew test-bot
+name: create bottle
 concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
@@ -24,7 +24,6 @@ jobs:
           pwd
           brew tap xiaoanne/kinetik-cli
           brew install --build-bottle kinetik-cli
-          cd bottle
           brew bottle kinetik-cli
           ls -R
 
@@ -40,10 +39,10 @@ jobs:
           name: bottle-tarball
           path: ./bottle
 
-      - run: |
-          cd bottle
-          tar -zxvf kinetik-cli--0.13.5.monterey.bottle.1.tar.gz -C .
-          ls -R
+#      - run: |
+#          cd bottle
+#          tar -zxvf kinetik-cli--0.13.5.monterey.bottle.1.tar.gz -C .
+#          ls -R
 
       - name: Publish Bottle
         env:
