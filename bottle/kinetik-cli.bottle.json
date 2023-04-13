@@ -1,8 +1,9 @@
 {
-  "name": "example-formula",
+  "name": "kinetik-cli",
+  "tap": "xiaoanne/kinetik-cli",
   "versions": {
-    "1.0.0": {
-      "url": "file:///path/to/bottle/file.tar.gz",
+    "0.13.5": {
+      "url": "file:///Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz",
       "sha256": "cc3230053427fbe4e25dfdaa40148fcdfc87968bdfde782a9e918dba8d461280"
     }
   },
