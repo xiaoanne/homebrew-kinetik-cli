@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
-          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.PAT}}
         run: |
           git config --global user.email "anne@example.com"
           git config --global user.name "anne"
