@@ -7,7 +7,6 @@ class KinetikCli < Formula
   license "Apache-2.0"
   head "https://github.com/xiaoanne/kinetik-cli", branch: "main"
   bottle do
-    # root_url "https://ghcr.io/v2/xiaoanne/kinetik-cli"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33610a18d1461fca4f1f97cf1da0e34d39fdfa533703e21e02b52c6d0f361bda"
