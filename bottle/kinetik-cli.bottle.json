@@ -14,7 +14,7 @@
     "bottle": {
       "root_url": "https://ghcr.io/v2/homebrew/core",
       "cellar": "any_skip_relocation",
-      "rebuild": 6,
+      "rebuild": 7,
       "date": "2023-04-06",
       "tags": {
         "x86_64_linux": {
