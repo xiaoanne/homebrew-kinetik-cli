@@ -12,10 +12,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - name: run
+      - name: setup git/install kinetik/create bottle
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
+          GIT_EDITOR: vi
         run: |
+          git config --global user.email "engineering@section6.nz"
+          git config --global user.name "Anne Wang"
           ls -R
           pwd
           brew tap xiaoanne/kinetik-cli
@@ -32,13 +35,6 @@ jobs:
         with:
           name: bottles
           path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
-
-      - name: Set up Git
-        env:
-          GIT_EDITOR: vi
-        run: |
-          git config --global user.email "engineering@section6.nz"
-          git config --global user.name "Anne Wang"
 
       - name: Publish Bottle
         env:
