@@ -18,8 +18,8 @@ jobs:
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
         run: |
-          git config --global user.email "engineering@section6.nz"
-          git config --global user.name "Anne Wang"
+#          git config --global user.email "engineering@section6.nz"
+#          git config --global user.name "Anne Wang"
           ls -R
           pwd
           brew tap xiaoanne/kinetik-cli
@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bottle-tarball
-          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
+          path: /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
 
       - name: Download Artifact
         uses: actions/download-artifact@v2
