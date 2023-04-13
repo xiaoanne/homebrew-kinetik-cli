@@ -12,6 +12,7 @@ class KinetikCli < Formula
 
   on_macos do
     if Hardware::CPU.arm?
+        # url "file:///Users/annewang/Downloads/homebrew-kinetik-cli/bin/kinetik-main-aarch64-apple-darwin"
         url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GithubPrivateRepositoryReleaseDownload
         sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
         else
