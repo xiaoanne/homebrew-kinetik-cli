@@ -40,6 +40,8 @@ jobs:
       - name: Publish Bottle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
 #          GIT_EDITOR: vi
         run: |
           brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
