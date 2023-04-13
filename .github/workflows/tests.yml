@@ -14,12 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: Homebrew/actions/setup-homebrew@master
-      - name: setup git/install kinetik/create bottle
+      - name: install kinetik/create bottle
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.PAT }}
         run: |
-#          git config --global user.email "engineering@section6.nz"
-#          git config --global user.name "Anne Wang"
           ls -R
           pwd
           brew tap xiaoanne/kinetik-cli
