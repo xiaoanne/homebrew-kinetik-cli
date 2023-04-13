@@ -1,0 +1,16 @@
+{
+  "name": "kinetik-cli",
+  "tap": "xiaoanne/kinetik-cli",
+  "versions": {
+    "0.13.5": {
+      "url": "file:///Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz",
+      "sha256": "cc3230053427fbe4e25dfdaa40148fcdfc87968bdfde782a9e918dba8d461280"
+    }
+  },
+  "description": "KinetikCli",
+  "homepage": "https://github.com/xiaoanne/kinetik-cli",
+  "license": "anne",
+  "maintainer": {
+    "github": "xiaoanne"
+  }
+}

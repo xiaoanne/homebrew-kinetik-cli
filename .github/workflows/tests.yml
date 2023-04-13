@@ -1,20 +1,16 @@
-name: brew test-bot
+name: create bottle
 concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
 
 on:
   push:
-    branches:
-#      - main
-      - feature
+#    branches:
+#      - feature
   pull_request:
 jobs:
-  test-bot:
-    strategy:
-      matrix:
-        os: [macos-12]
-    runs-on: ${{ matrix.os }}
+  anne-try:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - uses: Homebrew/actions/setup-homebrew@master
@@ -34,13 +30,21 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: kinetik binaries
-          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
+          name: bottle-tarball
+          path: /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: bottle-tarball
+          path: ./bottle
 
       - name: Publish Bottle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_EDITOR: vi
+          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          hub release create v1.0.0
-          hub release upload v1.0.0 /Users/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.monterey.bottle.1.tar.gz
+          ls -R
+          cd bottle
+          brew pr-upload --verbose --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
