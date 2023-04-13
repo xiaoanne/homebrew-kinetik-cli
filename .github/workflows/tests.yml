@@ -19,7 +19,9 @@ jobs:
           ls -R
           pwd
           brew tap xiaoanne/kinetik-cli
-          brew install kinetik-cli
+          brew install --build-bottle kinetik-cli
+          brew bottle kinetik-cli
+          ls -R
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
