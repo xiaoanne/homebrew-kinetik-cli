@@ -3,7 +3,7 @@ require_relative "../lib/custom_download_strategy"
 class KinetikCli < Formula
   desc "This is the brew formula to install Kinetik CLI"
   homepage "https://github.com/xiaoanne/homebrew-kinetik-cli"
-  version "0.13.11"
+  version "0.13.12"
   license "Apache-2.0"
   head "https://github.com/xiaoanne/homebrew-kinetik-cli", branch: "main"
 
