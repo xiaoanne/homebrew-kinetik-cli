@@ -32,12 +32,13 @@ class KinetikCli < Formula
   end
 
   on_linux do
-    url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.5/kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz"
-    sha256 "b8e8078427a79515d33fe5863ea0e8deb915b98d4b3e095f8e228444eb82ba0f"
-#     url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-unknown-linux-gnu", :using => GithubPrivateRepositoryReleaseDownload
-#     sha256 "4f49bb353d920a01fd4fc3e2689c70f900848c35afb85bc72e2fb683bcb09ffd"
+#     url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.5/kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz"
+#     sha256 "b8e8078427a79515d33fe5863ea0e8deb915b98d4b3e095f8e228444eb82ba0f"
+    url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-unknown-linux-gnu", :using => GithubPrivateRepositoryReleaseDownload
+    sha256 "4f49bb353d920a01fd4fc3e2689c70f900848c35afb85bc72e2fb683bcb09ffd"
     def install
-        bin.install "0.13.5/bin/kinetik" => "kinetik"
+#         bin.install "0.13.5/bin/kinetik" => "kinetik"
+        bin.install "kinetik-main-x86_64-unknown-linux-gnu" => "kinetik"
         chmod 0755, "#{bin}/kinetik"
     end
   end
