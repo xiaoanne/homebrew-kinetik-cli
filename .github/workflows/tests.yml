@@ -24,7 +24,7 @@ jobs:
           brew install --build-bottle kinetik-cli
           brew bottle kinetik-cli --json
           # brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli
-          # brew test-bot --tap=xiaoanne/kinetik-cli --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli --only-formulae xiaoanne/kinetik-cli/kinetik-cli
+          # brew test-bot --tap=xiaoanne/kinetik-cli --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli xiaoanne/kinetik-cli/kinetik-cli
           # brew test-bot --only-formulae xiaoanne/kinetik-cli/kinetik-cli
           ls -R
 
