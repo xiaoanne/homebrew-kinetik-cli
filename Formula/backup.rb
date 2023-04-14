@@ -1,6 +1,6 @@
 require_relative "../lib/custom_download_strategy"
 
-class backup < Formula
+class Backup < Formula
   desc "This is the brew formula to install Kinetik CLI"
   homepage "https://github.com/section6nz/homebrew-kinetik-base"
   version "0.13.5"
