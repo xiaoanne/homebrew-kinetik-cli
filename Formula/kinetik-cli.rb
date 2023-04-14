@@ -23,7 +23,7 @@ class KinetikCli < Formula
         if Hardware::CPU.arm?
           bin.install "0.13.5/bin/kinetik" => "kinetik"
         else
-          bin.install "0.13.5/bin/kinetik" => "kinetik"
+          bin.install "kinetik-main-x86_64-apple-darwin" => "kinetik"
         end
         chmod 0755, "#{bin}/kinetik"
         system "xattr", "-dr", "com.apple.quarantine", "#{bin}/kinetik"
