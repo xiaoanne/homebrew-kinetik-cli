@@ -21,7 +21,8 @@ class KinetikCli < Formula
 
     def install
         if Hardware::CPU.arm?
-          bin.install "0.13.5/bin/kinetik" => "kinetik"
+#           bin.install "0.13.5/bin/kinetik" => "kinetik"
+          bin.install "kinetik-main-aarch64-apple-darwin" => "kinetik"
         else
           bin.install "kinetik-main-x86_64-apple-darwin" => "kinetik"
         end
