@@ -34,9 +34,9 @@ jobs:
         with:
           name: bottle-tarball
           path: |
-            # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
+            /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
             # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz
-            /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/
+            # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/
             # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz
 
       - name: Download Artifact

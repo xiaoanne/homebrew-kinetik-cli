@@ -14,14 +14,9 @@
     "bottle": {
       "root_url": "https://ghcr.io/v2/homebrew/core",
       "cellar": "any_skip_relocation",
-      "rebuild": 7,
+      "rebuild": 8,
       "date": "2023-04-06",
       "tags": {
-        "x86_64_linux": {
-          "filename": "kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz",
-          "local_filename": "kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz",
-          "sha256": "b8e8078427a79515d33fe5863ea0e8deb915b98d4b3e095f8e228444eb82ba0f"
-        },
         "arm64_monterey": {
           "filename": "kinetik-cli-0.13.5.arm64_monterey.bottle.1.tar.gz",
           "local_filename": "kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz",
