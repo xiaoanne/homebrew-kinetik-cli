@@ -47,13 +47,13 @@ jobs:
           name: bottle-tarball
           path: ./bottle
 
-      - name: Publish Bottle
-        env:
-          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
-          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.PAT}}
-        run: |
-          git config --global user.email "anne@example.com"
-          git config --global user.name "anne"
-          cd bottle
-          ls -R /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/xiaoanne/
-          brew pr-upload --verbose --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
+#      - name: Publish Bottle
+#        env:
+#          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
+#          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.PAT}}
+#        run: |
+#          git config --global user.email "anne@example.com"
+#          git config --global user.name "anne"
+#          cd bottle
+#          ls -R /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/xiaoanne/
+#          brew pr-upload --verbose --root-url="https://ghcr.io/v2/xiaoanne/kinetik-cli"
