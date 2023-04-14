@@ -27,6 +27,7 @@ jobs:
           # brew test-bot --tap=xiaoanne/kinetik-cli --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli xiaoanne/kinetik-cli/kinetik-cli
           # brew test-bot --only-formulae xiaoanne/kinetik-cli/kinetik-cli
           ls -R
+          cat /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.x86_64_linux.bottle.json
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
