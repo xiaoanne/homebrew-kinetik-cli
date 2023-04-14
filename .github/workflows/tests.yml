@@ -24,7 +24,7 @@ jobs:
           # brew install --build-bottle kinetik-cli
           # brew bottle kinetik-cli
           # brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli
-          brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli xiaoanne/kinetik-cli
+          brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli xiaoanne/kinetik-cli/kinetik-cli
           ls -R
 
       - name: Upload artifact
