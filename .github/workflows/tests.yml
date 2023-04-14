@@ -21,10 +21,10 @@ jobs:
           ls -R
           pwd
           brew tap xiaoanne/kinetik-cli
-          brew install --build-bottle kinetik-cli
-          brew bottle kinetik-cli
+          # brew install --build-bottle kinetik-cli
+          # brew bottle kinetik-cli
           # brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli
-          # brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/d3/kinetik-cli xiaoanne/d3/kinetik-cli
+          brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli xiaoanne/kinetik-cli
           ls -R
 
       - name: Upload artifact
