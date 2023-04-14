@@ -10,10 +10,10 @@ class KinetikCli < Formula
   on_macos do
 
     if Hardware::CPU.arm?
-#         url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GithubPrivateRepositoryReleaseDownload
-#         sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
-        url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.5/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz"
-        sha256 "afd5db0fec87f8ec7c13dd94db9e9100fffd10d56116e54500f4b87a12346a07"
+        url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-aarch64-apple-darwin", :using => GithubPrivateRepositoryReleaseDownload
+        sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
+#         url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.5/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz"
+#         sha256 "afd5db0fec87f8ec7c13dd94db9e9100fffd10d56116e54500f4b87a12346a07"
     else
         url "https://github.com/section6nz/kinetik-base/releases/download/v0.13.5/kinetik-main-x86_64-apple-darwin", :using => GithubPrivateRepositoryReleaseDownload
         sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
