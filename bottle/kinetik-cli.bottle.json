@@ -2,7 +2,7 @@
   "xiaoanne/kinetik-cli/kinetik-cli": {
     "formula": {
       "name": "kinetik-cli",
-      "pkg_version": "0.13.6",
+      "pkg_version": "0.13.5",
       "path": "Library/Taps/xiaoanne/homebrew-kinetik-cli/Formula/kinetik-cli.rb",
       "tap_git_path": "kinetik-cli.rb",
       "tap_git_revision": "d2f0bff1bb7344646101573bd2c0e9bcb95fabbf",
