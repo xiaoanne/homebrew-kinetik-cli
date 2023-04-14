@@ -14,8 +14,8 @@
     "bottle": {
       "root_url": "https://ghcr.io/v2/homebrew/core",
       "cellar": "any_skip_relocation",
-      "rebuild": 8,
-      "date": "2023-04-06",
+      "rebuild": 9,
+      "date": "2023-04-14",
       "tags": {
         "arm64_monterey": {
           "filename": "kinetik-cli-0.13.5.arm64_monterey.bottle.1.tar.gz",
